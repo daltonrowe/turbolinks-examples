@@ -19,7 +19,7 @@ app.use(
   "/turbolinks-src",
   express.static(path.join(__dirname, "../../src"), {
     setHeaders: function(res, path, stat) {
-      res.set("Content-Type", "text/plain"); // Use express.static() options to set headers
+      res.set("Content-Type", "text/plain"); // Set headers to text plain for easier frontend
     }
   })
 );
