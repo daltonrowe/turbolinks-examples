@@ -4,7 +4,12 @@ const app = express();
 const port = 3000;
 
 // Serve our example pages as the root
-app.use("/", express.static(path.join(__dirname, "../pages")));
+app.use(
+  "/",
+  express.static(path.join(__dirname, "../pages"), {
+    extensions: ["htm", "html"] // Allow use of links without extensions
+  })
+);
 
 // Serve webpack javascript bundles
 app.use("/bundles", express.static(path.join(__dirname, "../dist")));
