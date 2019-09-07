@@ -4,8 +4,12 @@ import "./script_warning"
 export default namespace
 
 if (!window.Turbolinks) {
+  console.log("create window.Turbolinks");
   window.Turbolinks = namespace
+  
   if (!isAMD() && !isCommonJS()) {
+    
+    console.log('namepace.start !isAMD() !isCommonJs()');
     namespace.start()
   }
 }
