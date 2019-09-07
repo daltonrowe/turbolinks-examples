@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Development tools for Turbolinks examples",
   "scripts": {
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch",
-    "build": "npm run build:types && npm run build:js",
-    "build:types": "tsc --emitDeclarationOnly",
-    "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
-    "bundle": "webpack"
+    "dev:bundle": "webpack --watch",
+    "dev:serve": "nodemon ./server/server.js",
+    "dev:start": "npm-run-all --parallel dev:bundle dev:serve",
+    "dist:bundle": "webpack",
+    "dist:serve": "nodemon ./server/server.js",
+    "dist:start": "npm-run-all bundle serve"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -24,5 +24,8 @@
     "webpack-cli": "^3.3.7"
   },
   "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.2",
+    "npm-run-all": "^4.1.5"
   }
 }

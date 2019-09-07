@@ -23,13 +23,9 @@ filesArray.forEach(function(file) {
   examplesEntryPoints[`${file.replace(".ts", "")}`] = "./src/" + file;
 });
 
-// Add server code
-examplesEntryPoints.server = "./src/server/server.ts";
-
 module.exports = {
   entry: examplesEntryPoints,
   mode: "development",
-  watch: true,
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].bundle.js"
