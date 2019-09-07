@@ -1,10 +1,14 @@
 import namespace from "./namespace"
 import "./script_warning"
+import ExampleLogger from './ExampleLogger'
 
 export default namespace
 
 if (!window.Turbolinks) {
   console.log("create window.Turbolinks");
+  console.log("woo");
+  ExampleLogger.log('test31242343');
+  
   window.Turbolinks = namespace
   
   if (!isAMD() && !isCommonJS()) {

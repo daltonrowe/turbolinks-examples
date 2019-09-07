@@ -7,4 +7,8 @@ class TurbolinksExamplesBasic {
 }
 
 const example = new TurbolinksExamplesBasic;
+
+console.log('test5');
+
+
 example.start();
