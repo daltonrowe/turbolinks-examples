@@ -2,6 +2,7 @@ import { unindent } from "./util"
 
 (() => {
   let element: Element | null = document.currentScript
+
   if (!element) return
   if (element.hasAttribute("data-turbolinks-suppress-warning")) return
 
