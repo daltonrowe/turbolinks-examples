@@ -1,8 +1,7 @@
-import Turbolinks from '../../dist/turbolinks'
+import Turbolinks from '../../dist/index'
 
 class TurbolinksExamplesBasic {
    start() {
-      console.log('YourApp.start()');
       Turbolinks.start();
    }
 }
