@@ -1,6 +1,11 @@
 export class ExampleLogger {
-   log(text: string): any {
-      console.log(text);
+   log(text: string, detail?:any ): any {
+      if (detail) {
+         console.log(text, detail);
+      }
+      else {
+         console.log(text);
+      }
    }
 }
 

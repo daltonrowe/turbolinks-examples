@@ -1,6 +1,8 @@
 import { Location } from "./location"
 import { dispatch } from "./util"
 
+import ExampleLogger from './ExampleLogger'
+
 export type StatusCode = number
 
 export enum SystemStatusCode {
@@ -31,6 +33,7 @@ export class HttpRequest {
   xhr?: XMLHttpRequest
 
   constructor(delegate: HttpRequestDelegate, location: Location, referrer?: Location) {
+    // When delegate is created, `this` is passed allowing access to parent properties
     this.delegate = delegate
     this.location = location
     this.referrer = referrer
@@ -44,6 +47,7 @@ export class HttpRequest {
     if (this.xhr && !this.sent) {
       this.notifyApplicationBeforeRequestStart()
       this.setProgress(0)
+      ExampleLogger.log('xhr.send()', this.xhr);
       this.xhr.send()
       this.sent = true
       this.delegate.requestStarted()

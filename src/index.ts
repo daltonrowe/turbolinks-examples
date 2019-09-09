@@ -5,15 +5,10 @@ import ExampleLogger from './ExampleLogger'
 export default namespace
 
 if (!window.Turbolinks) {
-  console.log("create window.Turbolinks");
-  console.log("woo");
-  ExampleLogger.log('test31242343');
-  
+  ExampleLogger.log('assign window.Turbolinks');
   window.Turbolinks = namespace
   
   if (!isAMD() && !isCommonJS()) {
-    
-    console.log('namepace.start !isAMD() !isCommonJs()');
     namespace.start()
   }
 }

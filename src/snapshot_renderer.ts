@@ -3,6 +3,8 @@ import { RenderCallback, RenderDelegate, Renderer } from "./renderer"
 import { Snapshot } from "./snapshot"
 import { array } from "./util"
 
+import ExampleLogger from "./ExampleLogger"
+
 export { RenderCallback, RenderDelegate } from "./renderer"
 
 export type PermanentElement = Element & { id: string }
@@ -35,6 +37,7 @@ export class SnapshotRenderer extends Renderer {
 
   render(callback: RenderCallback) {
     if (this.shouldRender()) {
+      ExampleLogger.log('SnapshotRenderer.shouldRender === true')
       this.mergeHead()
       this.renderView(() => {
         this.replaceBody()
@@ -49,6 +52,7 @@ export class SnapshotRenderer extends Renderer {
   }
 
   mergeHead() {
+    ExampleLogger.log('SnapshotRenderer.mergeHead')
     this.copyNewHeadStylesheetElements()
     this.copyNewHeadScriptElements()
     this.removeCurrentHeadProvisionalElements()
@@ -56,6 +60,7 @@ export class SnapshotRenderer extends Renderer {
   }
 
   replaceBody() {
+    ExampleLogger.log('SnapshotRenderer.replaceBody')
     const placeholders = this.relocateCurrentBodyPermanentElements()
     this.activateNewBodyScriptElements()
     this.assignNewBody()

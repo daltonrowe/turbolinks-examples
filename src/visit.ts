@@ -7,6 +7,8 @@ import { Snapshot } from "./snapshot"
 import { Action } from "./types"
 import { uuid } from "./util"
 
+import ExampleLogger from './ExampleLogger'
+
 export enum TimingMetric {
   visitStart = "visitStart",
   requestStart = "requestStart",
@@ -52,6 +54,8 @@ export class Visit {
     this.action = action
     this.adapter = controller.adapter
     this.restorationIdentifier = restorationIdentifier
+
+    ExampleLogger.log('new Visit.constructor', this);
   }
 
   start() {
@@ -74,6 +78,7 @@ export class Visit {
 
   complete() {
     if (this.state == VisitState.started) {
+      ExampleLogger.log('Visit.complete')
       this.recordTimingMetric(TimingMetric.visitEnd)
       this.state = VisitState.completed
       this.adapter.visitCompleted(this)
@@ -84,6 +89,7 @@ export class Visit {
   fail() {
     if (this.state == VisitState.started) {
       this.state = VisitState.failed
+      ExampleLogger.log('Visit.fail', this)
       this.adapter.visitFailed(this)
     }
   }
@@ -134,8 +140,10 @@ export class Visit {
   }
 
   loadResponse() {
+    // destructure visit object instance
     const { request, response } = this
     if (request && response) {
+      console.log('Visit.loadResponse', [request, response]);
       this.render(() => {
         this.cacheSnapshot()
         if (request.failed) {
@@ -153,6 +161,7 @@ export class Visit {
 
   followRedirect() {
     if (this.redirectedToLocation && !this.followedRedirect) {
+      ExampleLogger.log('Visit.followRedirect')
       this.location = this.redirectedToLocation
       this.controller.replaceHistoryWithLocationAndRestorationIdentifier(this.redirectedToLocation, this.restorationIdentifier)
       this.followedRedirect = true

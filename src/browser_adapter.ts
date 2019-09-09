@@ -7,6 +7,8 @@ import { Action } from "./types"
 import { Visit } from "./visit"
 import { uuid } from "./util"
 
+import ExampleLogger from './ExampleLogger'
+
 export class BrowserAdapter implements Adapter {
   readonly controller: Controller
   readonly progressBar = new ProgressBar
@@ -23,6 +25,7 @@ export class BrowserAdapter implements Adapter {
   }
 
   visitStarted(visit: Visit) {
+    ExampleLogger.log('adapter.visitStarted');
     visit.issueRequest()
     visit.changeHistory()
     visit.loadCachedSnapshot()
@@ -73,7 +76,7 @@ export class BrowserAdapter implements Adapter {
   }
 
   visitRendered(visit: Visit) {
-
+    // TODO: Why are these empty?
   }
 
   // Private

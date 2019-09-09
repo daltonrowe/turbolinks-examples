@@ -2,6 +2,7 @@ import { ErrorRenderer } from "./error_renderer"
 import { Location } from "./location"
 import { Snapshot } from "./snapshot"
 import { RenderCallback, RenderDelegate, SnapshotRenderer } from "./snapshot_renderer"
+import ExampleLogger from "./ExampleLogger"
 
 export type RenderOptions = { snapshot: Snapshot, error: string, isPreview: boolean }
 
@@ -45,6 +46,7 @@ export class View {
   }
 
   renderSnapshot(snapshot: Snapshot, isPreview: boolean | undefined, callback: RenderCallback) {
+    ExampleLogger.log('Turbolinks.view.renderSnapshot', [snapshot, isPreview, callback])
     SnapshotRenderer.render(this.delegate, callback, this.getSnapshot(), snapshot, isPreview || false)
   }
 

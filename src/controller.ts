@@ -10,6 +10,8 @@ import { closest, defer, dispatch, uuid } from "./util"
 import { RenderOptions, View } from "./view"
 import { Visit } from "./visit"
 
+import ExampleLogger from './ExampleLogger'
+
 export type RestorationData = { scrollPosition?: Position }
 export type RestorationDataMap = { [uuid: string]: RestorationData }
 export type TimingData = {}
@@ -39,6 +41,7 @@ export class Controller {
   started = false
 
   start() {
+    ExampleLogger.log('Turbolinks.start');
     if (Controller.supported && !this.started) {
       addEventListener("click", this.clickCaptured, true)
       addEventListener("DOMContentLoaded", this.pageLoaded, false)
@@ -68,10 +71,12 @@ export class Controller {
   }
 
   visit(location: Locatable, options: Partial<VisitOptions> = {}) {
+    ExampleLogger.log('Turbolinks.visit');
     location = Location.wrap(location)
     if (this.applicationAllowsVisitingLocation(location)) {
       if (this.locationIsVisitable(location)) {
         const action = options.action || "advance"
+        ExampleLogger.log('Turbolinks.adapter.visitProposedToLocationWithAction', action);
         this.adapter.visitProposedToLocationWithAction(location, action)
       } else {
         window.location.href = location.toString()
@@ -81,9 +86,11 @@ export class Controller {
 
   startVisitToLocationWithAction(location: Locatable, action: Action, restorationIdentifier: string) {
     if (Controller.supported) {
+      ExampleLogger.log('Turbolinks.startVisitToLocationWithAction', [location, action, restorationIdentifier]);
       const restorationData = this.getRestorationDataForIdentifier(restorationIdentifier)
       this.startVisit(Location.wrap(location), action, { restorationData })
     } else {
+      ExampleLogger.log('!Controller.supported');
       window.location.href = location.toString()
     }
   }
@@ -203,12 +210,15 @@ export class Controller {
   }
 
   clickCaptured = () => {
+    // TODO: Learn more about clickCaptured & clickBubbled
     removeEventListener("click", this.clickBubbled, false)
     addEventListener("click", this.clickBubbled, false)
   }
-
+  
   clickBubbled = (event: MouseEvent) => {
+    ExampleLogger.log('Turbolinks.clickBubbled');
     if (this.enabled && this.clickEventIsSignificant(event)) {
+      ExampleLogger.log('Turbolinks.getVisitableLinkForTarget');
       const link = this.getVisitableLinkForTarget(event.target)
       if (link) {
         const location = this.getVisitableLocationForLink(link)

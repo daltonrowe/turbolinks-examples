@@ -1,4 +1,4 @@
-import Turbolinks from '../../dist/index'
+const Turbolinks = require('../../dist/turbolinks.js')
 
 class TurbolinksExamplesBasic {
    start() {
@@ -7,8 +7,5 @@ class TurbolinksExamplesBasic {
 }
 
 const example = new TurbolinksExamplesBasic;
-
-console.log('test5');
-
-
+console.log('YourApp.start', 5);
 example.start();
