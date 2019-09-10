@@ -2,15 +2,21 @@
    <head>
       <title>Turbolinks by Example : Introduction</title>
       <script type="text/javascript" src="/bundles/TurbolinksExamplesBasic.bundle.js"></script>
+      <link rel="stylesheet" href="/examples.css">
    </head>
 </html>
 
 <body>
-   <h1>Turbolinks by Example: Introduction</h1>
-   <a href="/" data-turbolinks="false">Back to Table of Contents</a>
+   <h1>data-turbolinks-track="reload"</h1>
 
-   <p>Page 2 of this example includes a script with `data-turbolinks-track="reload". Causing the page to reload.</p>
+   <a href="./data-turbolinks-track-reload-2">Go To Page 2 <br>(WITH data-turbolinks-track)</a>
+   <a href="./data-turbolinks-track-reload-3">Go To Page 3 <br>(WITHOUT data-turbolinks-track)</a>
 
-   <a href="./data-turbolinks-track-reload-2">Go To Page 2 (WITH data-turbolinks-track)</a>
-   <a href="./data-turbolinks-track-reload-3">Go To Page 3 (WITHOUT data-turbolinks-track)</a>
+   <p>
+      Page 2 of this example includes a script with `data-turbolinks-track="reload" in the head.<br>
+      Turbolinks sees this while merging the head, and triggers a regular page load.<br>
+      This leads to two requests to the server.
+   </p>
+
+   <a href="/" data-turbolinks="false" data-type="back">Back to Table of Contents</a>
 </body>
