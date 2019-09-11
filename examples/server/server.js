@@ -35,7 +35,7 @@ app.use(
 );
 
 // Serve files in /pages directory with one second delay
-app.use("/slow", function(req, res, next) {
+app.use("/slow", function(req, res) {
   setTimeout(function() {
     res.sendFile(req.path, { root: path.join(__dirname, "../pages") });
   }, 1000);
