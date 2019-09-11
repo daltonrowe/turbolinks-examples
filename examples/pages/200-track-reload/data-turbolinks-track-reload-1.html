@@ -22,11 +22,26 @@
       </small>
    </a>
 
+   <a href="./data-turbolinks-track-reload-4">
+      Go To Page 4 & 5
+      <small>
+         These pages have identical scripts with track="reload" in the head.
+      </small>
+   </a>
+
    <p>
       Page 2 of this example includes a script with `data-turbolinks-track="reload" in the head.<br>
       Turbolinks sees this while merging the head, and triggers a regular page load.<br>
-      This leads to one requests to the server.
+      This leads to two requests sent to the server, via XHR and window.location
    </p>
+
+   <ul>
+      <p>OBS:</p>
+      <li>XHR and window.location requests are sent, hitting the server twice.</li>
+      <li>Page reloading is also triggered when navigating away from the page.</li>
+      <li>"TrackReload Script!" log only fires the first time page 3 is loaded.</li>
+      <li>Pages 4 & 5 have identical scripts in the head, and are NOT reloaded.</li>
+   </ul>
 
    <a href="./data-turbolinks-track-reload-1" data-turbolinks="false" class="margin-top">Start Over</a>
    <a href="/" data-turbolinks="false">Back to Table of Contents</a>

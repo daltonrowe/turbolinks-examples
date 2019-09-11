@@ -3,18 +3,18 @@
       <title>Turbolinks by Example : Introduction</title>
       <script type="text/javascript" src="/bundles/TurbolinksExamplesBasic.bundle.js"></script>
       <link rel="stylesheet" href="/styles/examples.css">
-      <link rel="stylesheet" href="/styles/300-managing-styles.css">
+      <link rel="stylesheet" href="/slow/styles/300-fouc.css" class="slow">
    </head>
 </html>
 
-<body>
-   <h1>Managing Styles</h1>
-   <a href="./managing-styles-1">Go To Page 1</a>
+<body class="page-2">
+   <h1>Flash of Unstyled Content</h1>
+   <a href="./fouc-track-reload-1">Go To Page 1</a>
 
    <div class="fouc-square">
       Page 2
    </div>
    
-   <a href="./managing-styles-1" class="margin-top" data-turbolinks="false">Start Over</a>
+   <a href="./fouc-track-reload-1" class="margin-top" data-turbolinks="false">Start Over</a>
    <a href="/" data-turbolinks="false">Back to Table of Contents</a>
 </body>

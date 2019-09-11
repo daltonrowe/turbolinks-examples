@@ -52,6 +52,13 @@ script::before {
 script::after {
    content:attr(src) " ";
 }
+script.inline {
+   font-size:0px;
+}
+script.inline::after {
+   content:"Inline Script";
+   font-size:16px;
+}
 
 link::before {
    font-style: italic;
@@ -115,12 +122,22 @@ small {
    padding-left:1px;
 }
 
-*[data-turbolinks-track=reload] {
+script[data-turbolinks-track=reload] {
    --color:orange;
 }
-*[data-turbolinks-track=reload]::before {
+script[data-turbolinks-track=reload]::before {
    font-size: 12px;
    content:'Script: data-turbolinks-track="reload"';
+   color: var(--color);
+   padding-left:1px;
+}
+
+link.slow {
+   --color:purple;
+}
+link.slow:before {
+   font-size: 12px;
+   content:'Style: Slowed 1s';
    color: var(--color);
    padding-left:1px;
 }
