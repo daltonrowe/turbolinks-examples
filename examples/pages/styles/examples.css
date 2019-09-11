@@ -100,3 +100,10 @@ a[data-type=back] {
    color: var(--color);
    padding-left:1px;
 }
+
+.fouc-square {
+   height:300px;
+   width:300px;
+   color:white;
+   background:green;
+}
