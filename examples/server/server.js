@@ -24,5 +24,21 @@ app.use(
   })
 );
 
+// Serve turbolinks source code
+app.use(
+  "/turbolinks-src",
+  express.static(path.join(__dirname, "../../src"), {
+    setHeaders: function(res, path, stat) {
+      res.set("Content-Type", "text/plain"); // Set headers to text plain for easier frontend
+    }
+  })
+);
+
+app.use("/slow", function(req, res, next) {
+  setTimeout(function() {
+    res.sendFile(req.path, { root: path.join(__dirname, "../pages") });
+  }, 2000);
+});
+
 // Hey, Listen!
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
