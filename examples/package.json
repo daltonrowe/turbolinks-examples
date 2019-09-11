@@ -8,8 +8,8 @@
     "dev:tbl": "cd ../ && yarn run clean && npm run build",
     "dev:start": "npm-run-all --parallel dev:bundle dev:serve dev:tbl",
     "dist:bundle": "webpack",
-    "dist:serve": "nodemon ./server/server.js",
-    "dist:start": "npm-run-all bundle serve"
+    "dist:serve": "node ./server/server.js",
+    "dist:start": "npm-run-all dist:bundle dist:serve"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
