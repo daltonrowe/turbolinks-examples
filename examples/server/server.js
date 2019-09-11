@@ -37,7 +37,7 @@ app.use(
 app.use("/slow", function(req, res, next) {
   setTimeout(function() {
     res.sendFile(req.path, { root: path.join(__dirname, "../pages") });
-  }, 2000);
+  }, 1000);
 });
 
 // Hey, Listen!

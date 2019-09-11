@@ -4,11 +4,13 @@
 
 html {
    font-family: sans-serif;
+   padding:10px;
 }
 
 head {
    display:block;
    max-width:800px;
+   width:100%;
    margin:40px auto 0 auto;
 }
 
@@ -64,6 +66,7 @@ body {
    border-bottom:5px solid blue;
    max-width:800px;
    margin:40px auto 0 auto;
+   width:100%;
 }
 body::before {
    font-style: italic;
@@ -78,6 +81,16 @@ p {
 
 a, a:visited {
    color:#4287f5;
+}
+
+ol a:visited {
+   color:#2065d3;
+}
+
+p a {
+   padding:0;
+   display:block;
+   border:none;
 }
 
 small {
@@ -113,9 +126,11 @@ small {
 }
 
 .fouc-square {
-   height:280px;
-   width:280px;
+   height:0;
+   width:auto;
+   max-width:280px;
    padding:10px;
+   padding-bottom:35%;
    color:white;
    background:green;
 }
