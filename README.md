@@ -1,4 +1,4 @@
-# Turbolinks
+# Turbolinks Examples
 
 ## Table of Contents:
 
