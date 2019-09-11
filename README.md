@@ -41,3 +41,5 @@ Logging functionality can be found in `src/ExampleLogger.ts`.
 [Forked from turbolinks/turbolinks](https://github.com/turbolinks/turbolinks)
 
 Turbolinks © 2019 Basecamp, LLC.
+
+Turbolinks Examples by Dalton Rowe MIT
