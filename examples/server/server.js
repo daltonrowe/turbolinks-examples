@@ -14,7 +14,7 @@ app.use(
 // Serve webpack javascript bundles
 app.use("/bundles", express.static(path.join(__dirname, "../dist")));
 
-// Serve turbolinks source code
+// Serve Turbolinks source code
 app.use(
   "/turbolinks-src",
   express.static(path.join(__dirname, "../../src"), {
@@ -24,10 +24,10 @@ app.use(
   })
 );
 
-// Serve turbolinks source code
+// Serve Turbolinks Examples source code
 app.use(
-  "/turbolinks-src",
-  express.static(path.join(__dirname, "../../src"), {
+  "/turbolinks-examples-src",
+  express.static(path.join(__dirname, "../"), {
     setHeaders: function(res, path, stat) {
       res.set("Content-Type", "text/plain"); // Set headers to text plain for easier frontend
     }
