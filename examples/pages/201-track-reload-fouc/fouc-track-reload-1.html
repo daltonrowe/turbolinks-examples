@@ -7,19 +7,23 @@
 </html>
 
 <body>
-   <h1>Turbolinks by Example: Introduction</h1>
-   <a href="./fouc-track-reload-2">Go To Page 2<br>
-      Styles delayed by two seconds on server.
+   <h1>Flash of Unstyled Content</h1>
+   <a href="./fouc-track-reload-2">Go To Page 2
+      <small>
+         Styles delayed by two seconds from the server.
+      </small>
    </a>
-   <a href="./fouc-track-reload-2">Go To Page 2<br>
-      Styles delayed by two seconds on server<br>
-      data-turbolinks-track="reload" in head
+   <a href="./fouc-track-reload-3">Go To Page 3
+      <small>
+         Styles delayed by two seconds from the server<br>
+         data-turbolinks-track="reload" in head
+      </small>
    </a>
 
    <div class="fouc-square">
-         Page 1
+      Page 1
    </div>
    
-   <a href="/" data-turbolinks="false" data-type="back">Back to Table of Contents</a>
-   <a href="./fouc-track-reload-1" data-turbolinks="false">Start Over</a>
+   <a href="./fouc-track-reload-1" class="margin-top" data-turbolinks="false">Start Over</a>
+   <a href="/" data-turbolinks="false">Back to Table of Contents</a>
 </body>
