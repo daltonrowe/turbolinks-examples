@@ -107,6 +107,16 @@ script[data-turbolinks-track=reload]::before {
    padding-left:1px;
 }
 
+a[data-turbolinks-action=replace] {
+   --color:#b3688b;
+}
+a[data-turbolinks-action=replace]::before {
+   font-size: 12px;
+   content:'Anchor: data-turbolinks-action="replace"';
+   color: var(--color);
+   padding-left:1px;
+}
+
 link.slow {
    --color:purple;
 }
