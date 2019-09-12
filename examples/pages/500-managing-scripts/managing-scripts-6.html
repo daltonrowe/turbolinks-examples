@@ -1,0 +1,26 @@
+<html>
+   <head>
+      <title>Turbolinks by Example : Managing Scripts 6</title>
+      <script type="text/javascript" src="/bundles/TurbolinksExamplesBasic.bundle.js"></script>
+      <link rel="stylesheet" href="/styles/examples.css">
+      <meta name="turbolinks-cache-control" content="no-cache">
+   </head>
+</html>
+
+<body>
+   <h1>Managing Scripts</h1>
+   <a href="./managing-scripts-1">Go To Page 1</a>
+
+   <p>
+      This page contains an inline script listening for turbolinks:load
+   </p>
+
+   <script type="text/javascript">
+      document.addEventListener('turbolinks:load', function() {
+         console.log('Page 6 Inline Script Here!');
+      })
+   </script>
+   
+   <a href="./managing-scripts-1" class="margin-top" data-turbolinks="false">Start Over</a>
+   <a href="/" data-turbolinks="false">Back to Table of Contents</a>
+</body>
