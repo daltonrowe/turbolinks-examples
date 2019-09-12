@@ -1,0 +1,29 @@
+<html>
+   <head>
+      <title>Turbolinks by Example : Managing Scripts 5</title>
+      <script type="text/javascript" src="/bundles/TurbolinksExamplesBasic.bundle.js"></script>
+      <link rel="stylesheet" href="/styles/examples.css">
+      <meta name="turbolinks-cache-control" content="no-cache">
+   </head>
+</html>
+
+<body>
+   <h1>Managing Scripts</h1>
+   <a href="./managing-scripts-1">Go To Page 1</a>
+
+   <p>
+      This page contains meta name="turbolinks-cache-control" content="no-cache" in the head.
+   </p>
+
+   <p>
+      OBS: Page 5 Inline Script Here! is logged once every visit<br>
+      Turbolinks will not cache, and therefore preview pages containing meta name="turbolinks-cache-control" content="no-cache"
+   </p>
+
+   <script type="text/javascript">
+      console.log('Page 5 Inline Script Here!');
+   </script>
+   
+   <a href="./managing-scripts-1" class="margin-top" data-turbolinks="false">Start Over</a>
+   <a href="/" data-turbolinks="false">Back to Table of Contents</a>
+</body>

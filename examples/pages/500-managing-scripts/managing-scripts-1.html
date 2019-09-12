@@ -21,13 +21,24 @@
          Contains an inline script, that checks for data-turbolinks-preview on the html element.
       </small>
    </a>
+   <a href="./managing-scripts-4">
+      Go To Page 4
+      <small>
+         Contains an inline script that with the attribute data-turbolinks-eval="false"
+      </small>
+   </a>
+   <a href="./managing-scripts-5">
+      Go To Page 5
+      <small>
+         Contains meta name="turbolinks-cache-control" content="no-cache"</pre>
+      </small>
+   </a>
 
    <p>
       Try: Filtering the console for "Inline Script Here!"<br><br>
       OBS: Page 2 Inline Script is fired twice after the first visit.<br>
       This is because Turbolinks inserts a cached version of the requested page's DOM as a preview. Turbolinks executes all inline scripts after each page render, one for the preview and one for the actual page.<br>
       <br>
-      TODO: Does this ALWAYS happen?
       <a href="https://github.com/turbolinks/turbolinks/issues/167">Turbolinks Issue 167</a>
       <a href="https://github.com/turbolinks/turbolinks#detecting-when-a-preview-is-visible">Turbolinks Readme: Detecting when a preview is visible</a>
    </p>

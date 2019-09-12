@@ -1,3 +1,7 @@
+/* ------------------------------------------------------------------------ */
+/* Invisibles */
+/* ------------------------------------------------------------------------ */
+
 .css-ignore {
    display:none !important;
 }
@@ -44,6 +48,18 @@ title::before {
    font-size: 12px;
 }
 
+meta {
+   --color:green;
+}
+meta::before {
+   font-style: italic;
+   content:"Meta: ";
+   font-size: 12px;
+}
+meta::after {
+   content:attr(content) " ";
+}
+
 script::before {
    font-style: italic;
    content:"Script: ";
@@ -68,6 +84,42 @@ link::before {
 link:after {
    content:attr(href) " ";
 }
+
+*[data-turbolinks=false] {
+   --color:red;
+}
+*[data-turbolinks=false]::after {
+   display:block;
+   font-size: 11px;
+   content:'data-turbolinks="false"';
+   color: var(--color);
+   padding-top:10px;
+   padding-left:1px;
+}
+
+script[data-turbolinks-track=reload] {
+   --color:orange;
+}
+script[data-turbolinks-track=reload]::before {
+   font-size: 12px;
+   content:'Script: data-turbolinks-track="reload"';
+   color: var(--color);
+   padding-left:1px;
+}
+
+link.slow {
+   --color:purple;
+}
+link.slow:before {
+   font-size: 12px;
+   content:'Style: Slowed 1s';
+   color: var(--color);
+   padding-left:1px;
+}
+
+/* ------------------------------------------------------------------------ */
+/* Layout */
+/* ------------------------------------------------------------------------ */
 
 body {
    border-bottom:5px solid rebeccapurple;
@@ -111,37 +163,9 @@ small {
    margin-top:60px;
 }
 
-*[data-turbolinks=false] {
-   --color:red;
-}
-*[data-turbolinks=false]::after {
-   display:block;
-   font-size: 11px;
-   content:'data-turbolinks="false"';
-   color: var(--color);
-   padding-top:10px;
-   padding-left:1px;
-}
-
-script[data-turbolinks-track=reload] {
-   --color:orange;
-}
-script[data-turbolinks-track=reload]::before {
-   font-size: 12px;
-   content:'Script: data-turbolinks-track="reload"';
-   color: var(--color);
-   padding-left:1px;
-}
-
-link.slow {
-   --color:purple;
-}
-link.slow:before {
-   font-size: 12px;
-   content:'Style: Slowed 1s';
-   color: var(--color);
-   padding-left:1px;
-}
+/* ------------------------------------------------------------------------ */
+/* Examples */
+/* ------------------------------------------------------------------------ */
 
 .fouc-square {
    height:0;

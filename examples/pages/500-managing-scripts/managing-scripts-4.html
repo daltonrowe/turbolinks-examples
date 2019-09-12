@@ -1,0 +1,29 @@
+<html>
+   <head>
+      <title>Turbolinks by Example : Managing Scripts 4</title>
+      <script type="text/javascript" src="/bundles/TurbolinksExamplesBasic.bundle.js"></script>
+      <link rel="stylesheet" href="/styles/examples.css">
+   </head>
+</html>
+
+<body>
+   <h1>Managing Scripts</h1>
+   <a href="./managing-scripts-1">Go To Page 1</a>
+
+   <p>
+      This page contains an inline script with the attribute data-turbolinks-eval="false"
+   </p>
+
+   <p>
+      Try: Refreshing this page.<br>
+      OBS: Page 4 Inline Script Here! is logged.<br>
+      Turbolinks ignores scripts with data-turbolinks-eval="false", but the browser will still execute them on intial load.
+   </p>
+
+   <script type="text/javascript" data-turbolinks-eval="false" >
+      console.log('Page 4 Inline Script Here!');
+   </script>
+   
+   <a href="./managing-scripts-1" class="margin-top" data-turbolinks="false">Start Over</a>
+   <a href="/" data-turbolinks="false">Back to Table of Contents</a>
+</body>
