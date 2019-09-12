@@ -1,6 +1,6 @@
 <html>
    <head>
-      <title>Turbolinks by Example : Managing Scripts 2</title>
+      <title>Turbolinks by Example : Managing Scripts 3</title>
       <script type="text/javascript" src="/bundles/TurbolinksExamplesBasic.bundle.js"></script>
       <link rel="stylesheet" href="/styles/examples.css">
    </head>
@@ -11,11 +11,13 @@
    <a href="./managing-scripts-1">Go To Page 1</a>
 
    <p>
-      This page contains an inline script.
+      This page contains an inline script, using data-turbolinks-preview.
    </p>
 
    <script type="text/javascript">
-      console.log('Page 2 Inline Script Here!');
+      if (!document.documentElement.hasAttribute("data-turbolinks-preview")) {
+         console.log('Page 3 Inline Script Here!');
+      }
    </script>
    
    <a href="./managing-scripts-1" class="margin-top" data-turbolinks="false">Start Over</a>

@@ -8,7 +8,30 @@
 
 <body>
    <h1>Managing Scripts</h1>
-   <a href="./managing-scripts-2">Go To Page 2</a>
+   <a href="./managing-scripts-2">
+      Go To Page 2
+      <small>
+         Contains an inline script.
+         TLDR; Don't do this.
+      </small>
+   </a>
+   <a href="./managing-scripts-3">
+      Go To Page 3
+      <small>
+         Contains an inline script, that checks for data-turbolinks-preview on the html element.
+      </small>
+   </a>
+
+   <p>
+      Try: Filtering the console for "Inline Script Here!"<br><br>
+      OBS: Page 2 Inline Script is fired twice after the first visit.<br>
+      This is because Turbolinks inserts a cached version of the requested page's DOM as a preview. Turbolinks executes all inline scripts after each page render, one for the preview and one for the actual page.<br>
+      <br>
+      TODO: Does this ALWAYS happen?
+      <a href="https://github.com/turbolinks/turbolinks/issues/167">Turbolinks Issue 167</a>
+      <a href="https://github.com/turbolinks/turbolinks#detecting-when-a-preview-is-visible">Turbolinks Readme: Detecting when a preview is visible</a>
+   </p>
+
    
    <a href="./managing-scripts-1" class="margin-top" data-turbolinks="false">Start Over</a>
    <a href="/" data-turbolinks="false">Back to Table of Contents</a>

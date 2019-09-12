@@ -98,6 +98,7 @@ p a {
    padding:0;
    display:block;
    border:none;
+   margin-bottom:0;
 }
 
 small {
