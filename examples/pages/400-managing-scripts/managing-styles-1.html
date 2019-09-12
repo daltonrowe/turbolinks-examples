@@ -1,0 +1,31 @@
+<html>
+   <head>
+      <title>Turbolinks by Example : Introduction</title>
+      <script type="text/javascript" src="/bundles/TurbolinksExamplesBasic.bundle.js"></script>
+      <link rel="stylesheet" href="/styles/examples.css">
+   </head>
+</html>
+
+<body>
+   <h1>Managing Styles</h1>
+   <a href="./managing-styles-2">Go To Page 2</a>
+
+   <p>
+      Turbolinks DOES NOT remove styles from the head. This is expected behavior and speeds up rendering time.
+      <a href="https://github.com/turbolinks/turbolinks/issues/249">Turbolinks Issue 249</a>
+   </p>
+
+   <ol>
+      <li>Go to Page 2</li>
+      <li>OBS: Square is blue</li>
+      <li>Go to Page 1</li>
+      <li>OBS: Square is still blue, page 2 styles are still in head</li>
+   </ol>
+
+   <div class="fouc-square">
+         Page 1
+   </div>
+   
+   <a href="./managing-styles-1" class="margin-top" data-turbolinks="false">Start Over</a>
+   <a href="/" data-turbolinks="false">Back to Table of Contents</a>
+</body>
