@@ -4,9 +4,9 @@
 
 1. Basic Implementation
 2. data-turbolinks-track="reload"
-3. Flash of Unstyled content
-4. Managing styles
-5. Inline Scripts
+3. Flash of Unstyled Content
+4. Managing Styles
+5. Managing Scripts
 
 
 ### Bundle Annotated Turbolinks
