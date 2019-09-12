@@ -6,6 +6,7 @@
 2. data-turbolinks-track="reload"
 3. Flash of Unstyled content
 4. Managing styles
+5. Inline Scripts
 
 
 ### Bundle Annotated Turbolinks
