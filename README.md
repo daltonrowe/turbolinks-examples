@@ -11,8 +11,8 @@
 
 ### Bundle Annotated Turbolinks
 
-1. `npm install` - Install Turbolinks dependencies
-2. `npm clean && npm build` - Build Turbolinks `/dist` folder.
+1. `yarn install` - Install Turbolinks dependencies
+2. `yarn clean && yarn build` - Build Turbolinks `/dist` folder.
 
 ### View Examples
 
